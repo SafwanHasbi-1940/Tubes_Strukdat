@@ -1,81 +1,175 @@
-# Tugas Besar Struktur Data - Aplikasi Pemutar Musik (Konsol)
+# Tugas Besar Struktur Data  
+## Aplikasi Pemutar Musik Berbasis Konsol
 
-Aplikasi pemutar musik berbasis konsol yang mendukung dua peran pengguna: **Admin** (mengelola library lagu) dan **User** (mencari lagu, memutar lagu, serta mengelola playlist).  
-Proyek ini dibuat untuk menerapkan materi Struktur Data seperti **ADT, pointer, Singly Linked List (SLL), dan Doubly Linked List (DLL)**.
+Aplikasi pemutar musik berbasis konsol yang mendukung dua peran pengguna, yaitu **Admin** dan **User**.  
+Admin bertugas mengelola library lagu, sedangkan User dapat mencari lagu, memutar lagu, serta mengelola playlist pribadi.
+
+Proyek ini dibuat sebagai bagian dari Tugas Besar Mata Kuliah **Struktur Data** dengan tujuan menerapkan konsep struktur data secara langsung ke dalam studi kasus nyata.
 
 ---
 
-## Identitas
-- Nama  : SAFWAN HASBI ASFAHANI
-- NIM   : 103052300023
-- Kelas : DS 47-02
-- Nama  : RAFIF SHIDQI APRIANDO
-- NIM   : 103052300104
-- Kelas : DS 47-02
-- Nama  : HAFIZ VAINAKY
-- NIM   : 103052300065
-- Kelas : DS 47-02
-- Mata Kuliah: Struktur Data
+## Identitas Kelompok
+
+**Mata Kuliah** : Struktur Data  
+
+1. **Safwan Hasbi Asfahani**  
+   NIM   : 103052300023  
+   Kelas : DS 47-02  
+
+2. **Rafif Shidqi Apriando**  
+   NIM   : 103052300104  
+   Kelas : DS 47-02  
+
+3. **Hafiz Vainaky**  
+   NIM   : 103052300065  
+   Kelas : DS 47-02  
 
 ---
 
 ## Fitur Utama
 
-### Admin
-1. Menambah lagu ke library
-2. Melihat semua lagu di library
-3. Mengubah data lagu di library
-4. Menghapus lagu di library  
-   - Jika lagu dihapus dari library, lagu juga ikut terhapus dari semua playlist user (sinkronisasi).
+### Peran Admin
+- Menambahkan lagu ke dalam library
+- Melihat seluruh lagu di library
+- Mengubah data lagu
+- Menghapus lagu dari library
+- Sinkronisasi otomatis:
+  Lagu yang dihapus dari library juga terhapus dari seluruh playlist User
 
-### User
-1. Mencari lagu di library (ID / judul / artis)
-2. Memutar dan menghentikan lagu (play/stop)
-3. Membuat playlist
-4. Menambahkan lagu ke playlist
-5. Menghapus lagu dari playlist
-6. Melihat isi playlist
-7. Next/Prev lagu:
-   - Jika memutar dari playlist: mengikuti urutan lagu di playlist
-   - Jika memutar dari library: memutar lagu “mirip” (prioritas artis sama, lalu genre sama, kemudian fallback)
+### Peran User
+- Mencari lagu berdasarkan ID, judul, atau artis
+- Memutar dan menghentikan lagu (play / stop)
+- Membuat playlist
+- Menambahkan lagu ke playlist
+- Menghapus lagu dari playlist
+- Melihat isi playlist
+- Navigasi **Next / Prev**:
+  - Mode playlist → mengikuti urutan playlist
+  - Mode library → memutar lagu mirip (prioritas artis sama, lalu genre sama, kemudian fallback)
 
 ---
 
 ## Struktur Data yang Digunakan
 
-1. **ADT Lagu (Record/Struct)**
-   - Menyimpan data: id, judul, artis, genre, album, tahun, durasi.
+### 1. ADT Lagu (Struct)
+Menyimpan data lagu berupa:
+- ID
+- Judul
+- Artis
+- Genre
+- Album
+- Tahun rilis
+- Durasi
 
-2. **Doubly Linked List (DLL) — Library Lagu**
-   - Alasan: mendukung navigasi dua arah (next/prev) pada library.
+### 2. Doubly Linked List (DLL) – Library Lagu
+Digunakan sebagai struktur utama penyimpanan lagu pada library.  
+Mendukung navigasi dua arah (next / prev) dan mempermudah proses penambahan serta penghapusan data lagu.
 
-3. **Singly Linked List (SLL) — Lagu dalam Playlist**
-   - Alasan: playlist bersifat linear dan cukup ditelusuri satu arah.
+### 3. Singly Linked List (SLL) – Playlist
+Digunakan untuk menyimpan daftar playlist dan lagu-lagu di dalam playlist.  
+Struktur ini dipilih karena bersifat linear dan cukup ditelusuri satu arah.
 
-4. **Singly Linked List (SLL) — Daftar Playlist**
-   - Menyimpan beberapa playlist berdasarkan nama.
-
-5. **Pointer Sharing (Sinkronisasi)**
-   - Node lagu di playlist menyimpan pointer ke node lagu di library.
-   - Dampak: update lagu di library otomatis tercermin pada playlist. Jika lagu dihapus, node referensi di playlist ikut dihapus.
+### 4. Pointer Sharing (Sinkronisasi Data)
+Node lagu pada playlist menyimpan pointer ke node lagu di library.  
+Dengan pendekatan ini:
+- Perubahan data lagu di library otomatis tercermin di playlist
+- Lagu yang dihapus dari library ikut terhapus dari playlist
 
 ---
 
-## Struktur Folder
+## Struktur File Project
 
-- `src/` : kode program (C++)
-- `docs/` : laporan tahap 1–3 (PDF)
-- `screenshots/` : bukti uji coba
+# Tugas Besar Struktur Data  
+## Aplikasi Pemutar Musik Berbasis Konsol
+
+Aplikasi pemutar musik berbasis konsol yang mendukung dua peran pengguna, yaitu **Admin** dan **User**.  
+Admin bertugas mengelola library lagu, sedangkan User dapat mencari lagu, memutar lagu, serta mengelola playlist pribadi.
+
+Proyek ini dibuat sebagai bagian dari Tugas Besar Mata Kuliah **Struktur Data** dengan tujuan menerapkan konsep struktur data secara langsung ke dalam studi kasus nyata.
 
 ---
 
-## Cara Menjalankan (Compile & Run)
+## Identitas Kelompok
 
-### Prasyarat
-- Compiler C++ (contoh: MinGW-w64 / g++)
+**Mata Kuliah** : Struktur Data  
 
-### Compile
-Masuk ke folder project, lalu compile dari terminal:
+1. **Safwan Hasbi Asfahani**  
+   NIM   : 103052300023  
+   Kelas : DS 47-02  
 
-```bash
-g++ src/main.cpp src/library.cpp src/playlist.cpp -o Tubes_Strukdat.exe
+2. **Rafif Shidqi Apriando**  
+   NIM   : 103052300104  
+   Kelas : DS 47-02  
+
+3. **Hafiz Vainaky**  
+   NIM   : 103052300065  
+   Kelas : DS 47-02  
+
+---
+
+## Fitur Utama
+
+### Peran Admin
+- Menambahkan lagu ke dalam library
+- Melihat seluruh lagu di library
+- Mengubah data lagu
+- Menghapus lagu dari library
+- Sinkronisasi otomatis:
+  Lagu yang dihapus dari library juga terhapus dari seluruh playlist User
+
+### Peran User
+- Mencari lagu berdasarkan ID, judul, atau artis
+- Memutar dan menghentikan lagu (play / stop)
+- Membuat playlist
+- Menambahkan lagu ke playlist
+- Menghapus lagu dari playlist
+- Melihat isi playlist
+- Navigasi **Next / Prev**:
+  - Mode playlist → mengikuti urutan playlist
+  - Mode library → memutar lagu mirip (prioritas artis sama, lalu genre sama, kemudian fallback)
+
+---
+
+## Struktur Data yang Digunakan
+
+### 1. ADT Lagu (Struct)
+Menyimpan data lagu berupa:
+- ID
+- Judul
+- Artis
+- Genre
+- Album
+- Tahun rilis
+- Durasi
+
+### 2. Doubly Linked List (DLL) – Library Lagu
+Digunakan sebagai struktur utama penyimpanan lagu pada library.  
+Mendukung navigasi dua arah (next / prev) dan mempermudah proses penambahan serta penghapusan data lagu.
+
+### 3. Singly Linked List (SLL) – Playlist
+Digunakan untuk menyimpan daftar playlist dan lagu-lagu di dalam playlist.  
+Struktur ini dipilih karena bersifat linear dan cukup ditelusuri satu arah.
+
+### 4. Pointer Sharing (Sinkronisasi Data)
+Node lagu pada playlist menyimpan pointer ke node lagu di library.  
+Dengan pendekatan ini:
+- Perubahan data lagu di library otomatis tercermin di playlist
+- Lagu yang dihapus dari library ikut terhapus dari playlist
+
+---
+
+## Struktur File Project
+
+Tubes_Strukdat/
+├── main.cpp
+├── music.h
+├── music.cpp
+└── README.md
+
+
+Keterangan:
+- `main.cpp` : program utama dan menu aplikasi
+- `music.h`  : definisi struktur data dan prototipe fungsi
+- `music.cpp`: implementasi fungsi-fungsi aplikasi
+
+---
