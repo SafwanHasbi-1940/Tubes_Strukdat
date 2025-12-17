@@ -1,3 +1,13 @@
+# Tugas Besar Struktur Data  
+## Aplikasi Pemutar Musik Berbasis Konsol
+
+Aplikasi pemutar musik berbasis konsol yang mendukung dua peran pengguna, yaitu **Admin** dan **User**.  
+Admin bertugas mengelola library lagu, sedangkan User dapat mencari lagu, memutar lagu, serta mengelola playlist pribadi.
+
+Proyek ini dibuat sebagai bagian dari Tugas Besar Mata Kuliah **Struktur Data** dengan tujuan menerapkan konsep struktur data secara langsung ke dalam studi kasus nyata.
+
+---
+
 ## Identitas Kelompok
 
 **Mata Kuliah** : Struktur Data  
